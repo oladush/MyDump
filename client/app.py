@@ -1,13 +1,13 @@
 """Клиент версия приложения для хранения паролей, которая писалась под тяжелыми наркотиками"""
 
-from release.client_assembly_one import DataBase
-from release.client_assembly_one import Network_client_tools
-from release.client_assembly_one import handler
+from client import DataBase
+from client import Network_client_tools
+from client import CommandHandler
 
 public_key = b'secret'
 private_key = b'supersecret'
 
-address = ("192.168.56.1", 5679)
+address = ("SECRET", 5679)
 
 
 if __name__ == "__main__":
@@ -24,8 +24,8 @@ if __name__ == "__main__":
 
         Network_client_tools.update_client(server_socket, login, password, private_key)
 
-        #command_handler(input()) Здесь надо будет навести красоту
-        commander = handler.CommandHandler(Note)
+        #Здесь нужно будет навести красоту
+        commander = CommandHandler.CommandHandler(Note)
         commander.command_handler(input())
 
         server_socket = Network_client_tools.connect(address)
