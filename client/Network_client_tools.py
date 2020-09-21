@@ -28,7 +28,7 @@ def update_server(server_sock, login, password, private_key):
     if aut == "Авторизация прошла успешно":
         ver = verifications(server_sock, private_key)
     else:
-        ver = None
+        ver = None 
 
     if ver == "Проверка ключа прошла успешно":
         with open("data.json", "rb") as read_file:
